@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="cordova-plugin-dummy"
+        version="1.0.0">
+
+	<name>dummy</name>
+
+	<engines>
+		<engine name="cordova" version=">=3.4.0"/>
+	</engines>
+
+	<asset src="www/Dummy.js" target="js/Dummy.js"/>
+
+	<js-module src="www/Dummy.js" name="Dummy">
+		<clobbers target="dummy" />
+	</js-module>
+
+	<platform name="android">
+		<!--Info: dependencies werden über den framework tag eingefügt und später der build.gradle hinzugefügt-->		
+		<!--framework src="com.google.zxing:core:3.4.1" /-->
+		
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="Dummy">
+				<param name="android-package" value="de.dummy.Dummy"/>
+			</feature>
+		</config-file>
+		<!--Java source file an die richtige Stelle (package Verzeichnisstruktur) kopieren-->
+		<source-file src="src/android/Dummy.java" target-dir="src/de/dummy"/>
+
+	</platform>
+
+
+</plugin>
