@@ -18,7 +18,7 @@
 	<platform name="android">
 		<hook type="after_prepare" src="hooks/android/removePermissions.js"/>
 		<config-file target="res/xml/config.xml" parent="/*">
-			
+			<preference name="AndroidWindowSplashScreenBackground" value="#FFFFFF" />
 			<feature name="Dummy">
 				<param name="android-package" value="de.dummy.Dummy"/>
 			</feature>
