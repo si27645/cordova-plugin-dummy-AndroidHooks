@@ -18,24 +18,6 @@ public class Dummy extends CordovaPlugin {
 
     @Override
     public boolean execute(final String action, final JSONArray data, final CallbackContext callbackContext) {
-
-        if (action.equals("hello_world")) {
-            try
-            {
-                presult = new PluginResult(PluginResult.Status.OK, "HALLO WELT");
-				presult.setKeepCallback(true);
-				callbackContext.sendPluginResult(presult);
-
-            } catch (Throwable e) {
-                Log.e(pluginName,e.getMessage(),e);
-                callbackContext.error(e.getMessage());
-            }
-
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+            return true;        
     }
 }
