@@ -16,15 +16,13 @@
 	</js-module>
 
 	<platform name="android">
-		<!--Info: dependencies werden über den framework tag eingefügt und später der build.gradle hinzugefügt-->		
-		<!--framework src="com.google.zxing:core:3.4.1" /-->
-		
+		<hook type="after_prepare" src="hooks/android/removePermissions.js"/>
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="Dummy">
 				<param name="android-package" value="de.dummy.Dummy"/>
 			</feature>
 		</config-file>
-		<!--Java source file an die richtige Stelle (package Verzeichnisstruktur) kopieren-->
+		
 		<source-file src="src/android/Dummy.java" target-dir="src/de/dummy"/>
 
 	</platform>
