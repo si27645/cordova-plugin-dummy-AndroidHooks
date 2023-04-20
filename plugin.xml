@@ -18,10 +18,13 @@
 	<platform name="android">
 		<hook type="after_prepare" src="hooks/android/removePermissions.js"/>
 		<config-file target="res/xml/config.xml" parent="/*">
-			<uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove"/>
+			
 			<feature name="Dummy">
 				<param name="android-package" value="de.dummy.Dummy"/>
 			</feature>
+		</config-file>
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove"/>
 		</config-file>
 		
 		<source-file src="src/android/Dummy.java" target-dir="src/de/dummy"/>
